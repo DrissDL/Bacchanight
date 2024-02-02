@@ -2,7 +2,7 @@ const express = require('express');
 const fileUpload = require('express-fileupload');
 const path = require('path');
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000; // Utilisez le port défini par l'environnement ou le port 4000 par défaut
 
 app.use(
     fileUpload({
@@ -13,7 +13,7 @@ app.use(
     })
 );
 
-// Add this line to serve our index.html page
+// Ajoutez cette ligne pour servir votre page index.html
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
@@ -22,25 +22,25 @@ app.get('/', (req, res) => {
 
 app.post('/upload', (req, res) => {
     console.log('upload');
-    // Get the file that was set to our field named "image"
+    // Récupérez le fichier qui a été défini dans notre champ nommé "image"
     const { image } = req.files;
 
-
-    // If no image submitted, exit
+    // Si aucun fichier n'est soumis, quittez
     if (!image) {
         console.log('pas de fichier')
         return res.sendStatus(400);
     }
 
-    // If does not have image mime type prevent from uploading
-    //if (/^image/.test(image.mimetype)) return res.sendStatus(400);
-
-    // Move the uploaded image to our upload folder
-    image.mv(__dirname + '/upload/' + image.name);
-    console.log('test', __dirname + '/upload/' + image.name);
-
-    // All good
-    res.sendStatus(200);
+    // Déplacez l'image téléchargée vers notre dossier de téléchargement
+    image.mv(path.join(__dirname, '/upload/', image.name), (err) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send(err);
+        }
+        console.log('Fichier téléchargé avec succès');
+        // Tout est bon
+        res.sendStatus(200);
+    });
 });
 
 app.listen(port, () => {
