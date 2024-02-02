@@ -44,5 +44,5 @@ app.post('/upload', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`Server run on http://localhost:${port}`);
 });
