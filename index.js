@@ -16,8 +16,15 @@ app.use(
 // Ajoutez cette ligne pour servir votre page index.html
 app.use(express.static('public'));
 
+// Configuration pour servir des fichiers statiques à partir du dossier upload
+app.use('/static', express.static(path.join(__dirname, 'public', 'upload')));
+
+
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/index.html'));
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+app.get('/gallery', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/gallery.html'));
 });
 
 app.post('/upload', (req, res) => {
@@ -32,7 +39,7 @@ app.post('/upload', (req, res) => {
     }
 
     // Déplacez l'image téléchargée vers notre dossier de téléchargement
-    image.mv(path.join(__dirname, '/upload/', image.name), (err) => {
+    image.mv(path.join(__dirname, 'public', 'upload', image.name), (err) => {
         if (err) {
             console.error(err);
             return res.status(500).send(err);

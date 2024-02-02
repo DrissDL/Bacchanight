@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        /* Style pour la disposition des images */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>COucou</h1>
+    <div class="gallery" id="imageGallery"></div>
+
+
+    <script type="module" src="/imagesList.js"></script>
+    <script type="module">
+        // Importer la liste d'images depuis imagesList.js
+        import { images } from './imagesList.js';
+    
+        // Sélectionner l'élément div de la galerie
+        const gallery = document.getElementById('imageGallery');
+    
+        // Parcourir la liste d'images et les ajouter à la galerie
+        images.forEach(image => {
+            // Créer un élément d'image
+            let img = document.createElement('img');
+            // Définir la source de l'image
+            img.src = image;
+            // Ajouter l'image à la galerie
+            gallery.appendChild(img);
+        });
+    </script>
+    
+</body>
+</html>

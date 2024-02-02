@@ -1,0 +1,1 @@
+export const images = ["./static/upload/Capture dâeÌcran 2024-01-30 aÌ 14.42.59.png","./static/upload/Capture dâeÌcran 2024-01-30 aÌ 14.44.01.png","./static/upload/Capture dâeÌcran 2024-01-30 aÌ 14.44.30.png"];
