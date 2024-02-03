@@ -113,6 +113,15 @@ app.post('/upload', async (req, res) => {
             });
             child.on('close', (code) => {
                 console.log(`child process exited with code ${code}`);
+                
+                // Exécuter la commande de pull
+                exec('git pull', (error, stdout, stderr) => {
+                    if (error) {
+                        console.error('Erreur lors de la commande de pull :', error);
+                        return;
+                    }
+                    console.log('Pull effectué avec succès :', stdout);
+                });
             });
 
             res.sendStatus(200);

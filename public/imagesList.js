@@ -1,1 +1,1 @@
-export const images = [];
+export const images = ["/upload/Capture dâeÌcran 2024-01-30 aÌ 14.42.45.png"];
