@@ -119,28 +119,28 @@ app.post('/upload', async (req, res) => {
                     try {
                         await createCommit(`Chargement des images`);
                         console.log('Nouveau commit créé avec succès');
+
+                        // Exécuter la commande de pull
+                        exec('git pull', (error, stdout, stderr) => {
+                            if (error) {
+                                console.error('Erreur lors de la commande de pull :', error);
+                                return;
+                            }
+                            console.log('Pull effectué avec succès :', stdout);
+
+                            // Exécuter la commande de push
+                            exec('git push', (error, stdout, stderr) => {
+                                if (error) {
+                                    console.error('Erreur lors de la commande de push :', error);
+                                    return;
+                                }
+                                console.log('Push effectué avec succès :', stdout);
+                            });
+                        });
                     } catch (error) {
                         console.error('Erreur lors de la création du commit :', error);
                     }
                 }
-
-                // Exécuter la commande de pull
-                exec('git pull', (error, stdout, stderr) => {
-                    if (error) {
-                        console.error('Erreur lors de la commande de pull :', error);
-                        return;
-                    }
-                    console.log('Pull effectué avec succès :', stdout);
-
-                    // Exécuter la commande de push
-                    exec('git push', (error, stdout, stderr) => {
-                        if (error) {
-                            console.error('Erreur lors de la commande de push :', error);
-                            return;
-                        }
-                        console.log('Push effectué avec succès :', stdout);
-                    });
-                });
             });
 
             res.sendStatus(200);
