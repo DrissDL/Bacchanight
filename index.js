@@ -2,6 +2,8 @@ const express = require('express');
 const fileUpload = require('express-fileupload');
 const path = require('path');
 const fs = require('fs');
+const { exec } = require('child_process');
+
 const app = express();
 const port = process.env.PORT || 4000;
 
@@ -17,6 +19,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Définir le dossier statique pour servir les fichiers publics
 app.use(express.static(path.join(__dirname, 'static')));
+
+// Fonction pour créer un commit avec un message spécifié
+function createCommit(message) {
+    return new Promise((resolve, reject) => {
+        exec(`git add . && git commit -m "${message}"`, (error, stdout, stderr) => {
+            if (error) {
+                console.error('Erreur lors de la création du commit :', error);
+                reject(error);
+            }
+            if (stderr) {
+                console.error('Erreur lors de la création du commit :', stderr);
+                reject(stderr);
+            }
+            console.log('Commit créé avec succès :', stdout);
+            resolve(stdout);
+        });
+    });
+}
 
 // Route pour la page d'accueil
 app.get('/', (req, res) => {
@@ -48,9 +68,8 @@ app.get('/stylish', (req, res) => {
     res.sendFile(path.join(__dirname, './public/stylish.html'));
 });
 
-
 // Route POST pour gérer le téléchargement de fichiers
-app.post('/upload', (req, res) => {
+app.post('/upload', async (req, res) => {
     console.log('Téléchargement en cours...');
 
     // Récupérer le fichier téléchargé défini dans notre champ nommé "image"
@@ -71,16 +90,25 @@ app.post('/upload', (req, res) => {
     }
 
     // Déplacer l'image téléchargée vers notre dossier de téléchargement
-    image.mv(path.join(uploadDir, image.name), (err) => {
+    image.mv(path.join(uploadDir, image.name), async (err) => {
         if (err) {
             console.error('Erreur lors du téléchargement du fichier :', err);
             return res.status(500).send(err);
         }
         console.log('Fichier téléchargé avec succès');
-        // Tout est bon, renvoyer une réponse avec un code de succès 200
-        res.sendStatus(200);
+
+        // Créer un commit avec un message indiquant le nom de l'image téléchargée
+        try {
+            await createCommit(`Ajout de l'image ${image.name}`);
+            console.log('Commit créé avec succès');
+            res.sendStatus(200);
+        } catch (error) {
+            console.error('Erreur lors de la création du commit :', error);
+            res.status(500).send(error);
+        }
     });
 });
+
 // Démarrer le serveur
 app.listen(port, () => {
     console.log(`Le serveur fonctionne sur http://localhost:${port}`);
