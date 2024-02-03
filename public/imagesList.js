@@ -1,1 +1,1 @@
-export const images = ["/upload/1.png","/upload/2.png","/upload/3.png","/upload/Capture dâeÌcran 2024-01-30 aÌ 14.42.33.png"];
+export const images = ["/upload/1.png","/upload/2.png","/upload/3.png","/upload/Capture dâeÌcran 2024-01-30 aÌ 14.42.33.png","/upload/Capture dâeÌcran 2024-01-30 aÌ 14.42.45.png","/upload/Capture dâeÌcran 2024-01-30 aÌ 14.42.53.png"];

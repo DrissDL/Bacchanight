@@ -3,6 +3,7 @@ const fileUpload = require('express-fileupload');
 const path = require('path');
 const fs = require('fs');
 const { exec } = require('child_process');
+const { spawn } = require('child_process');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -101,6 +102,19 @@ app.post('/upload', async (req, res) => {
         try {
             await createCommit(`Ajout de l'image ${image.name}`);
             console.log('Commit créé avec succès');
+
+            // Lancer le script loadImages.js
+            const child = spawn('node', ['loadImages.js']);
+            child.stdout.on('data', (data) => {
+                console.log(`stdout: ${data}`);
+            });
+            child.stderr.on('data', (data) => {
+                console.error(`stderr: ${data}`);
+            });
+            child.on('close', (code) => {
+                console.log(`child process exited with code ${code}`);
+            });
+
             res.sendStatus(200);
         } catch (error) {
             console.error('Erreur lors de la création du commit :', error);
