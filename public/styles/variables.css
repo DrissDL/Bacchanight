@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "BeVietnamPro-Light";
+  src: url(/font/Be_Vietnam_Pro/BeVietnamPro-Light.ttf);
+}
+
+@font-face {
+  font-family: "BoChenFont";
+  src: url(/font/bo_chen_font/BoChenFont.ttf);
+}
+
+body {
+  margin-bottom: 80px;
+}
+
+.top-space {
+  margin-bottom: 110px;
+}
+
+h1 {
+  font-family: "BoChenFont";
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-family: "BoChenFont";
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-family: "BoChenFont";
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-family: "BoChenFont";
+  font-size: 1rem;
+}
+
+p {
+  font-family: "BeVietnamPro-Light";
+  font-size: 1rem;
+}
+
+input,
+label {
+  font-family: "BeVietnamPro-Light";
+}
+
+a {
+  font-family: "BeVietnamPro-Light";
+}
+
+.center {
+  text-align: center;
+}
+
+.underline-text {
+  text-decoration: underline;
+}
+
+.delete-text {
+  color: #ed2f2f;
+}
+
+.buttonText {
+  font-family: "BoChenFont";
+  font-size: 0.813rem;
+}
+
+.mentionsLegals {
+  font-size: 0.813rem;
+  text-decoration: underline;
+}
+
+
+.p-1-25 {
+  padding: 1.25rem !important;
+}
+.p-1 {
+  padding: 1.25rem !important;
+}
+
+.m-0 {
+  margin: 0rem !important;
+}
+.m-1 {
+  margin: 1rem !important;
+}
+.m-5 {
+  margin: 5rem !important;
+}
+
+.gap-1 {
+  gap: 1em;
+}
+.gap-2 {
+  gap: 2em;
+}
+.gap-3 {
+  gap: 3rem;
+}
+
+.w-100{
+  width: 100%;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
