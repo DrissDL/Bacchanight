@@ -121,6 +121,15 @@ app.post('/upload', async (req, res) => {
                         return;
                     }
                     console.log('Pull effectué avec succès :', stdout);
+
+                    // Exécuter la commande de push
+                    exec('git push', (error, stdout, stderr) => {
+                        if (error) {
+                            console.error('Erreur lors de la commande de push :', error);
+                            return;
+                        }
+                        console.log('Push effectué avec succès :', stdout);
+                    });
                 });
             });
 
@@ -131,7 +140,6 @@ app.post('/upload', async (req, res) => {
         }
     });
 });
-
 // Démarrer le serveur
 app.listen(port, () => {
     console.log(`Le serveur fonctionne sur http://localhost:${port}`);
