@@ -1,6 +1,7 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const path = require('path');
+const fs = require('fs');
 const app = express();
 const port = process.env.PORT || 4000;
 
@@ -13,7 +14,6 @@ app.use(fileUpload({
 
 // Middleware pour servir les fichiers statiques depuis le dossier 'public'
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 // Définir le dossier statique pour servir les fichiers publics
 app.use(express.static(path.join(__dirname, 'static')));
@@ -52,6 +52,7 @@ app.get('/stylish', (req, res) => {
 // Route POST pour gérer le téléchargement de fichiers
 app.post('/upload', (req, res) => {
     console.log('Téléchargement en cours...');
+
     // Récupérer le fichier téléchargé défini dans notre champ nommé "image"
     const { image } = req.files;
 
@@ -61,8 +62,16 @@ app.post('/upload', (req, res) => {
         return res.sendStatus(400);
     }
 
+    // Chemin complet du dossier de destination
+    const uploadDir = path.join(__dirname, 'static', 'upload');
+
+    // Vérifier si le dossier de destination existe, sinon le créer
+    if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+    }
+
     // Déplacer l'image téléchargée vers notre dossier de téléchargement
-    image.mv(path.join(__dirname, 'public', 'upload', image.name), (err) => {
+    image.mv(path.join(uploadDir, image.name), (err) => {
         if (err) {
             console.error('Erreur lors du téléchargement du fichier :', err);
             return res.status(500).send(err);
@@ -72,7 +81,6 @@ app.post('/upload', (req, res) => {
         res.sendStatus(200);
     });
 });
-
 // Démarrer le serveur
 app.listen(port, () => {
     console.log(`Le serveur fonctionne sur http://localhost:${port}`);
