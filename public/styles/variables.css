@@ -112,3 +112,9 @@ a {
   flex-wrap: nowrap;
   align-items: center;
 }
+
+body{
+  background-image:url(/background.png);
+  background-size: unset;
+  background-repeat: repeat;
+}
