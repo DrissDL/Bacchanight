@@ -111,9 +111,19 @@ app.post('/upload', async (req, res) => {
             child.stderr.on('data', (data) => {
                 console.error(`stderr: ${data}`);
             });
-            child.on('close', (code) => {
+            child.on('close', async (code) => {
                 console.log(`child process exited with code ${code}`);
                 
+                if (code === 0) {
+                    // Créer un nouveau commit après avoir exécuté le script loadImages.js
+                    try {
+                        await createCommit(`Chargement des images`);
+                        console.log('Nouveau commit créé avec succès');
+                    } catch (error) {
+                        console.error('Erreur lors de la création du commit :', error);
+                    }
+                }
+
                 // Exécuter la commande de pull
                 exec('git pull', (error, stdout, stderr) => {
                     if (error) {
@@ -140,6 +150,7 @@ app.post('/upload', async (req, res) => {
         }
     });
 });
+
 // Démarrer le serveur
 app.listen(port, () => {
     console.log(`Le serveur fonctionne sur http://localhost:${port}`);
