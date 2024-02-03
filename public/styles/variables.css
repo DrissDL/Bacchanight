@@ -18,12 +18,12 @@ body {
 
 h1 {
   font-family: "BoChenFont";
-  font-size: 1.75rem;
+  font-size: 2.50rem;
 }
 
 h2 {
   font-family: "BoChenFont";
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 h3 {
@@ -64,7 +64,7 @@ a {
 
 .buttonText {
   font-family: "BoChenFont";
-  font-size: 0.813rem;
+  font-size: 1rem;
 }
 
 .mentionsLegals {
@@ -73,17 +73,17 @@ a {
 }
 
 
-.p-1-25 {
-  padding: 1.25rem !important;
-}
 .p-1 {
+  padding: 2.45rem;
+}
+.p-2 {
   padding: 1.25rem !important;
 }
 
-.m-0 {
-  margin: 0rem !important;
-}
 .m-1 {
+  margin: 2.45rem;
+}
+.m-2 {
   margin: 1rem !important;
 }
 .m-5 {
@@ -91,17 +91,18 @@ a {
 }
 
 .gap-1 {
-  gap: 1em;
+  gap: 3.875rem;
 }
 .gap-2 {
-  gap: 2em;
-}
-.gap-3 {
-  gap: 3rem;
+  gap: 3.125rem;
 }
 
 .w-100{
   width: 100%;
+}
+
+.h-100{
+  height: 100vh;
 }
 
 
@@ -117,4 +118,29 @@ body{
   background-image:url(/background.png);
   background-size: unset;
   background-repeat: repeat;
+}
+
+.button{
+  border: 1px solid black;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 8px;
+}
+
+.containerButton{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centerAllElements{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main{
+  width: 100vw;
+  height: 100vh;
 }
