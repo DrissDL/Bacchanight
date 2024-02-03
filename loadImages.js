@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const imagesDirectory = './static/upload'; // Chemin vers le dossier des images
+console.log("")
 
 // Supprimer le contenu existant du fichier imagesList.js
 fs.writeFileSync('./public/imagesList.js', '', 'utf-8');

@@ -14,6 +14,10 @@ app.use(fileUpload({
 // Middleware pour servir les fichiers statiques depuis le dossier 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// Définir le dossier statique pour servir les fichiers publics
+app.use(express.static(path.join(__dirname, 'static')));
+
 // Route pour la page d'accueil
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
