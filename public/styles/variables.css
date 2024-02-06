@@ -28,12 +28,12 @@ h2 {
 
 h3 {
   font-family: "BoChenFont";
-  font-size: 1.25rem;
+  font-size: 1.50rem;
 }
 
 h4 {
   font-family: "BoChenFont";
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 p {
@@ -80,6 +80,10 @@ a {
   padding: 1.25rem !important;
 }
 
+.p-3{
+  padding: 0.85rem;
+}
+
 .m-1 {
   margin: 2.45rem;
 }
@@ -121,6 +125,7 @@ body{
 }
 
 .button{
+  background-color: none;
   border: 1px solid black;
   border-radius: 10px;
   width: fit-content;
@@ -140,7 +145,48 @@ body{
   justify-content: center;
 }
 
-main{
+.main{
   width: 100vw;
   height: 100vh;
+}
+
+.gallery{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgGallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
+  gap: 10px;
+}
+
+.painting{
+  width: 100%; /* Assure que l'image occupe la largeur complète du conteneur */
+  height: auto; /* Ajuste la hauteur en conséquence pour maintenir les proportions */
+}
+
+.stylish{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.commandButton{
+  margin: 0.20rem;
+}
+
+.stylishButton{
+  margin: 0.50rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+.containerStylishButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

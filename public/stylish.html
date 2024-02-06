@@ -4,17 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/main.css">
-    <title>Document</title>
+    <title>Custom Portrait Homme 3</title>
 </head>
 <body>
-<h1>stylish</h1>
 
+<main class="container">
 
-<form action="/upload" method="POST" enctype="multipart/form-data">
+    <div class="stylish p-3">
+        <button class="button buttonText commandButton" href="/choixtableaux">
+            <img src="/buttons/Retour.svg" alt="retour"></img>
+            Retour
+        </button>
+        <button class="button buttonText commandButton">
+            <img src="/buttons/Commandback.svg" alt="Annuler"></img>
+            Annuler
+        </button>
+        <button class="button buttonText commandButton">
+            <img src="/buttons/Commandreset.svg" alt="Réinitialiser"></img>
+            Reinitialiser
+        </button>
+        <button class="button buttonText commandButton">
+            <img src="/buttons/Commandsave.svg" alt="Enregistrer"></img>
+            Enregistrer
+        </button>
+    </div>
+
+    <img src="/portraits/PortraitH3.png" alt="Tableau" class="painting p-3">
+
+    <div class="stylish p-3">
+        <div class="containerStylishButton">
+            <button class="button buttonText stylishButton">
+                <img src="/buttons/AccessoryW.svg" alt="Accessoires"></img>
+            </button>
+            <p>Accessoires</p>
+        </div>
+        <div class="containerStylishButton">
+            <button class="button buttonText stylishButton">
+                <img src="/buttons/BackgroundW.svg" alt="Fond"></img>
+            </button>
+            <p>Fond</p>
+        </div>
+        <div class="containerStylishButton">
+            <button class="button buttonText stylishButton">
+                <img src="/buttons/PatternsW.svg" alt="Motifs"></img>
+            </button>
+            <p>Motifs</p>
+        </div>
+    </div>
+
+<!--<form action="/upload" method="POST" enctype="multipart/form-data">
     <input type="file" name="image" />
     <button type="submit">Upload</button>
-</form>
+</form>-->
 
-<a href="/gallery">Voir la galerie</a>
+</main>
 </body>
 </html>
