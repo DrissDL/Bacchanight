@@ -128,8 +128,8 @@ app.post('/upload', async (req, res) => {
                             }
                             console.log('Pull effectué avec succès :', stdout);
 
-                            // Exécuter la commande de push
-                            exec('git push', (error, stdout, stderr) => {
+                            // Exécuter la commande de push avec le token d'authentification
+                            exec(`git push https://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@github.com/DrissDL/Bacchanight.git`, (error, stdout, stderr) => {
                                 if (error) {
                                     console.error('Erreur lors de la commande de push :', error);
                                     return;
