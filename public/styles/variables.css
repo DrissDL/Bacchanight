@@ -167,6 +167,7 @@ body{
 .painting{
   width: 100%; /* Assure que l'image occupe la largeur complète du conteneur */
   height: auto; /* Ajuste la hauteur en conséquence pour maintenir les proportions */
+  position: relative;
 }
 
 .stylish{
@@ -217,4 +218,9 @@ body{
 
 #filterButton.selected{
   background-color: #FFEB80;
+}
+
+.absolute{
+  position: absolute;
+  transform: translate(0rem, -1rem);
 }
