@@ -45,7 +45,6 @@
         <script type="module">
             import { images } from './imagesListFond.js';
             const background = document.querySelector('.background');
-            console.log('c', background);
             images.forEach(image => {
                 let img = document.createElement('img');
                 img.src = image;
@@ -63,16 +62,16 @@
         <script type="module">
             import { images } from './imagesListAcc.js';
             const accessorytop = document.querySelector('.accessory-top');
-            console.log('c', accessorytop);
             images.forEach(image => {
                 let img = document.createElement('img');
                 img.src = image;
                 accessorytop.appendChild(img);
                 console.log('loding')
             });
-            // updateAccessorytopImages()
+            updateAccessorytopImages()
         </script>
     </div>
+
 
     <div id="nav-accessory" class="inactive navContainer">
         <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche" class="button buttonText navButton" id="previous-button-accesoir"/>

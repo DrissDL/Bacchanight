@@ -16,7 +16,7 @@ fs.readdir(imagesDirectory, (err, files) => {
   const imageFiles = files.filter(file => /\.(jpg|png|gif|jpeg|webp)$/.test(file));
 
   // Générer une liste de chemins d'accès relatifs pour les images
-  const data = imageFiles.map(imageFile => (`/accPortrait/Top/${imageFile}`));
+  const data = imageFiles.map(imageFile => (`/accPortraitH3/Top/${imageFile}`));
 
   // Convertir la liste en JSON
   const imagesList = JSON.stringify(data);

@@ -9,6 +9,23 @@ AccessoryButton.addEventListener('click', () => {
 });
 */
 
+const accessoryButton = document.getElementById('accessoryButton');
+const navAccessory = document.getElementById('nav-accessory');
+
+accessoryButton.addEventListener('click', () => {
+    console.log('click accessoryButton');
+    //reset
+    navPattern.classList.add('inactive');
+    patternButton.classList.remove('selected')
+    navFilter.classList.add('inactive');
+    filterButton.classList.remove('selected');
+    navBackground.classList.add('inactive');
+    backgroundButton.classList.remove('selected');
+
+    navAccessory.classList.toggle('inactive');
+    accessoryButton.classList.toggle('selected');
+})
+
 
 const backgroundButton = document.getElementById('bgButton');
 const navBackground = document.getElementById('nav-background');
@@ -20,10 +37,15 @@ backgroundButton.addEventListener('click', () => {
     patternButton.classList.remove('selected')
     navFilter.classList.add('inactive');
     filterButton.classList.remove('selected');
+    navAccessory.classList.add('inactive');
+    accessoryButton.classList.remove('selected');
+    
 
     navBackground.classList.toggle('inactive');
     backgroundButton.classList.toggle('selected');
 })
+
+
 
 const patternButton = document.getElementById('patternButton');
 const navPattern = document.getElementById('nav-pattern');
@@ -34,6 +56,10 @@ patternButton.addEventListener('click', () => {
         backgroundButton.classList.remove('selected')
         navFilter.classList.add('inactive');
         filterButton.classList.remove('selected');
+        navAccessory.classList.add('inactive');
+        accessoryButton.classList.remove('selected');
+        
+
 
 
     navPattern.classList.toggle('inactive');
@@ -48,7 +74,9 @@ filterButton.addEventListener('click', () => {
             navBackground.classList.add('inactive');
             backgroundButton.classList.remove('selected')
             navPattern.classList.add('inactive');
-            patternButton.classList.remove('selected')
+            patternButton.classList.remove('selected');
+            navAccessory.classList.add('inactive');
+            accessoryButton.classList.remove('selected');
 
 
     navFilter.classList.toggle('inactive');
