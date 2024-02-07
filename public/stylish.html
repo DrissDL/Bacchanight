@@ -11,44 +11,83 @@
 <main class="container">
 
     <div class="stylish p-3">
-        <button class="button buttonText commandButton" href="/choixtableaux">
-            <img src="/buttons/Retour.svg" alt="retour"></img>
-            Retour
-        </button>
-        <button class="button buttonText commandButton">
-            <img src="/buttons/Commandback.svg" alt="Annuler"></img>
-            Annuler
-        </button>
-        <button class="button buttonText commandButton">
-            <img src="/buttons/Commandreset.svg" alt="Réinitialiser"></img>
-            Reinitialiser
-        </button>
-        <button class="button buttonText commandButton">
-            <img src="/buttons/Commandsave.svg" alt="Enregistrer"></img>
-            Enregistrer
-        </button>
+        <div class="containerStylishButton">
+            <a class="button buttonText commandButton centerAllElements" href="/choixtableaux" id="Retour">
+                <img src="/buttons/Retour.svg" alt="retour" class="imgLogo"></img>
+                <p>Retour</p>
+            </a>
+        </div>
+
+        <div class="containerStylishButton">
+            <a class="button buttonText commandButton centerAllElements" href="/choixtableaux" id="Back">
+                <img src="/buttons/CommandBack.svg" alt="Annuler" class="imgLogo"></img>
+                <p>Annuler</p>
+            </a>
+        </div>
+
+        <div class="containerStylishButton">
+            <a class="button buttonText commandButton centerAllElements" href="/choixtableaux" id="Reset">
+                <img src="/buttons/CommandReset.svg" alt="Réinitialiser" class="imgLogo"></img>
+                <p>Réinitialiser</p>
+            </a>
+        </div>
+
+        <div class="containerStylishButton">
+            <a class="button buttonText commandButton centerAllElements" href="/choixtableaux" id="Done">
+                <img src="/buttons/CommandDone.svg" alt="Terminer" class="imgLogo"></img>
+                <p>Terminer</p>
+            </a>
+        </div>
     </div>
 
     <img src="/portraits/PortraitH3.png" alt="Tableau" class="painting p-3">
 
+
+    <div id="nav-accessory" class="inactive">
+        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche"></img>
+        <img src="/buttons/SelectRight.svg" alt="Flèche de droite"></img>
+    </div>
+
+    <div id="nav-background" class="inactive">
+        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche"></img>
+        <img src="/buttons/SelectRight.svg" alt="Flèche de droite"></img>
+    </div>
+
+    <div id="nav-pattern" class="inactive">
+        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche"></img>
+        <img src="/buttons/SelectRight.svg" alt="Flèche de droite"></img>
+    </div>
+
+    <div id="nav-filter" class="inactive">
+        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche"></img>
+        <img src="/buttons/SelectRight.svg" alt="Flèche de droite"></img>
+    </div>
+
     <div class="stylish p-3">
         <div class="containerStylishButton">
-            <button class="button buttonText stylishButton">
-                <img src="/buttons/AccessoryW.svg" alt="Accessoires"></img>
-            </button>
+            <a class="button buttonText stylishButton centerAllElements" id="accessoryButton">
+                <img src="/buttons/Accessory.svg" alt="Accessoires" id="accessory"></img>
+            </a>
             <p>Accessoires</p>
         </div>
         <div class="containerStylishButton">
-            <button class="button buttonText stylishButton">
-                <img src="/buttons/BackgroundW.svg" alt="Fond"></img>
-            </button>
+            <a class="button buttonText stylishButton centerAllElements" id="bgButton">
+                <img src="/buttons/Background.svg" alt="Fond" id="background"></img>
+            </a>
             <p>Fond</p>
         </div>
         <div class="containerStylishButton">
-            <button class="button buttonText stylishButton">
-                <img src="/buttons/PatternsW.svg" alt="Motifs"></img>
-            </button>
+            <a class="button buttonText stylishButton centerAllElements" id="patternButton">
+                <img src="/buttons/Patterns.svg" alt="Motifs" id="pattern"></img>
+            </a>
             <p>Motifs</p>
+        </div>
+
+        <div class="containerStylishButton">
+            <a class="button buttonText stylishButton centerAllElements" id="filterButton">
+                <img src="/buttons/Settings.svg" alt="Filtres" id="filter"></img>
+            </a>
+            <p>Filtres</p>
         </div>
     </div>
 
@@ -58,5 +97,6 @@
 </form>-->
 
 </main>
+<script src="stylish.js"></script>
 </body>
 </html>

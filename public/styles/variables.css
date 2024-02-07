@@ -38,7 +38,7 @@ h4 {
 
 p {
   font-family: "BeVietnamPro-Light";
-  font-size: 1rem;
+  font-size: 0.938rem;
 }
 
 input,
@@ -130,6 +130,7 @@ body{
   border-radius: 10px;
   width: fit-content;
   padding: 8px;
+  flex-direction: column;
 }
 
 .containerButton{
@@ -176,12 +177,14 @@ body{
 
 .commandButton{
   margin: 0.20rem;
+  width: fit-content;
+  height: 4rem;
 }
 
 .stylishButton{
   margin: 0.50rem;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 .containerStylishButton{
@@ -189,4 +192,29 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.inactive{
+  display: none;
+}
+
+.imgLogo{
+  width: 2rem;
+  height: fit-content;
+}
+
+#accessoryButton.selected{
+  background-color: #FAC5EE;
+}
+
+#bgButton.selected{
+  background-color: #BEE3F7;
+}
+
+#patternButton.selected{
+  background-color: #CFFACE;
+}
+
+#filterButton.selected{
+  background-color: #FFEB80;
 }
