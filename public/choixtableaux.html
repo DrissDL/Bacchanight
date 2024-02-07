@@ -13,29 +13,91 @@
 
 <p>Choisissez un tableau dans la galerie</p>
 <div class="gap-2 gallery imgGallery p-2">
-    <a href="/stylish">
+    <a id="Madeleine">
         <img src="/portraits/Madeleine.jpg" alt="Tableau" class="painting">
     </a>
-    <a href="/stylish">
+    <a id="Lucrece">
         <img src="/portraits/Lucrece.png" alt="Tableau" class="painting">
     </a>
-    <a href="/stylish">
+    <a id="H1">
         <img src="/portraits/PortraitH.png" alt="Tableau" class="painting">
     </a>
-    <a href="/stylish">
+    <a id="H2">
         <img src="/portraits/PortraitH2.png" alt="Tableau" class="painting">
     </a>
-    <a href="/stylish">
+    <a id="H3">
         <img src="/portraits/PortraitH3.png" alt="Tableau" class="painting">
     </a>
-    <a href="/stylish">
+    <a id="H4">
         <img src="/portraits/PortraitH4.png" alt="Tableau" class="painting">
     </a>
+
+    <div id="modalMadeleine" class="modal">
+        <div class="modalContent">
+            <button id="closeMadeleine" class="button buttonText">Fermer</button>
+            <p> “Madeleine pénitente” TITIEN Tiziano VECELLIO - 1540</p>
+            <img src="/portraits/Madeleine.jpg" class="painting">
+            <p>Oh ! Mais c’est Marie-Madeleine, Madeleine pour les intimes, son chagrin d’amour n’en finit donc pas. Ravivons sa flamme !</p>
+            <a href="/stylish" id="chose" class="button buttonText">Choisir</a>
+        </div>
+    </div>
+    
+    <div id="modalLucrece" class="modal">
+        <div class="modalContent">
+            <button id="closeLucrece" class="button buttonText">Fermer</button>
+            <p>“Lucrèce” Lucas Cranach l’Ancien - 1472</p>
+            <img src="/portraits/Lucrece.png" class="painting">
+            <p>Oh ! Nonn ! Ne me dites pas que c’est la fameuse histoire du suicide de Lucrèce. À travers un seul regard, elle exprime sa profonde tristesse, montrant la souffrance qu'elle a endurée pour prouver son innocence à son père, victime d'un viol.</p>
+            <a href="/stylish" id="chose" class="button buttonText">Choisir</a>
+        </div>
+    </div>
+
+    <div id="modalH1" class="modal">
+        <div class="modalContent">
+            <button id="closeH1" class="button buttonText">Fermer</button>
+            <p> “Portrait d'homme” VERMEYEN Jan Cornelisz - </p>
+            <img src="/portraits/PortraitH.png" class="painting">
+            <p>Oh ! Ne serait-ce pas l’autoportrait du fameux peintre Jan Cornelisz VERMEYEN ! Pourquoi a-t-il l’air si triste ? Il est possible qu'il ait aussi fait l'expérience de la trahison conjugale. Ahlalala les femmes !</p>
+            <a href="/stylish" id="chose" class="button buttonText">Choisir</a>
+        </div>
+    </div>
+
+    <div id="modalH2" class="modal">
+        <div class="modalContent">
+            <button id="closeH2" class="button buttonText">Fermer</button>
+            <p>  “Portrait d'homme tenant une lettre et un gant” Palma Le VIEUX - 1515-1525</p>
+            <img src="/portraits/PortraitH2.png" class="painting">
+            <p>“Oh mais qui est-ce ? Ce jeune homme a l’air tout perdu dans sa vie ! Peut-être que lui aussi se perd dans l’ennuyeuse routine de la vie ! Aidez-moi à lui redonner goût à la vie !”</p>
+            <a href="/stylish" id="chose" class="button buttonText">Choisir</a>
+        </div>
+    </div>
+
+    <div id="modalH3" class="modal">
+        <div class="modalContent">
+            <button id="closeH3" class="button buttonText">Fermer</button>
+            <p> “Portrait du banquier Anton Fugger” MALER Hans - 1525</p>
+            <img src="/portraits/PortraitH3.png" class="painting">
+            <p>Oh ! Mais c’est Anton Fugger le célèbre banquier allemand, membre d’une puissante famille. Il a l’air si triste ! Peut-être qu’il venait tout juste d’apprendre qu’il était accusé d’escroquerie par sa propre famille.</p>
+            <a href="/stylish" id="chose" class="button buttonText">Choisir</a>
+        </div>
+    </div>
+
+    <div id="modalH4" class="modal">
+        <div class="modalContent">
+            <button id="closeH4" class="button buttonText">Fermer</button>
+            <p> “Portrait d'homme tenant un gant” OLIVERIO Alessandro - 1520-1544</p>
+            <img src="/portraits/PortraitH4.png" class="painting">
+            <p>“Oh mais qui est-ce ? Ce jeune homme a l’air tout perdu dans sa vie ! Peut-être que lui aussi se perd dans l’ennuyeuse routine de la vie ! Aidez-moi à lui redonner goût à la vie !”</p>
+            <a href="/stylish" id="chose" class="button buttonText">Choisir</a>
+        </div>
+    </div>
+
 </div>
+
 
 <a href="/gallery" class="button buttonText m-1">Galerie Commune</a>
 
 </main>
-
+<script src="choixtableaux.js"></script>
 </body>
 </html>
