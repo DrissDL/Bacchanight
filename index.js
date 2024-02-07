@@ -1,11 +1,8 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const path = require('path');
-const fs = require('fs');
-const { exec } = require('child_process');
-const { spawn } = require('child_process');
-
 const app = express();
+
 const port = process.env.PORT || 4000;
 
 // Middleware pour la gestion des téléchargements de fichiers
@@ -20,24 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Définir le dossier statique pour servir les fichiers publics
 app.use(express.static(path.join(__dirname, 'static')));
-
-// Fonction pour créer un commit avec un message spécifié
-function createCommit(message) {
-    return new Promise((resolve, reject) => {
-        exec(`git add . && git commit -m "${message}"`, (error, stdout, stderr) => {
-            if (error) {
-                console.error('Erreur lors de la création du commit :', error);
-                reject(error);
-            }
-            if (stderr) {
-                console.error('Erreur lors de la création du commit :', stderr);
-                reject(stderr);
-            }
-            console.log('Commit créé avec succès :', stdout);
-            resolve(stdout);
-        });
-    });
-}
 
 // Route pour la page d'accueil
 app.get('/', (req, res) => {
@@ -69,8 +48,9 @@ app.get('/stylish', (req, res) => {
     res.sendFile(path.join(__dirname, './public/stylish.html'));
 });
 
+
 // Route POST pour gérer le téléchargement de fichiers
-app.post('/upload', async (req, res) => {
+app.post('/upload', (req, res) => {
     console.log('Téléchargement en cours...');
 
     // Récupérer le fichier téléchargé défini dans notre champ nommé "image"
@@ -91,66 +71,16 @@ app.post('/upload', async (req, res) => {
     }
 
     // Déplacer l'image téléchargée vers notre dossier de téléchargement
-    image.mv(path.join(uploadDir, image.name), async (err) => {
+    image.mv(path.join(uploadDir, image.name), (err) => {
         if (err) {
             console.error('Erreur lors du téléchargement du fichier :', err);
             return res.status(500).send(err);
         }
         console.log('Fichier téléchargé avec succès');
-
-        // Créer un commit avec un message indiquant le nom de l'image téléchargée
-        try {
-            await createCommit(`Ajout de l'image ${image.name}`);
-            console.log('Commit créé avec succès');
-
-            // Lancer le script loadImages.js
-            const child = spawn('node', ['loadImages.js']);
-            child.stdout.on('data', (data) => {
-                console.log(`stdout: ${data}`);
-            });
-            child.stderr.on('data', (data) => {
-                console.error(`stderr: ${data}`);
-            });
-            child.on('close', async (code) => {
-                console.log(`child process exited with code ${code}`);
-                
-                if (code === 0) {
-                    // Créer un nouveau commit après avoir exécuté le script loadImages.js
-                    try {
-                        await createCommit(`Chargement des images`);
-                        console.log('Nouveau commit créé avec succès');
-
-                        // Exécuter la commande de pull
-                        exec('git pull', (error, stdout, stderr) => {
-                            if (error) {
-                                console.error('Erreur lors de la commande de pull :', error);
-                                return;
-                            }
-                            console.log('Pull effectué avec succès :', stdout);
-
-                            // Exécuter la commande de push avec le token d'authentification
-                            exec(`git push https://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@github.com/DrissDL/Bacchanight.git`, (error, stdout, stderr) => {
-                                if (error) {
-                                    console.error('Erreur lors de la commande de push :', error);
-                                    return;
-                                }
-                                console.log('Push effectué avec succès :', stdout);
-                            });
-                        });
-                    } catch (error) {
-                        console.error('Erreur lors de la création du commit :', error);
-                    }
-                }
-            });
-
-            res.sendStatus(200);
-        } catch (error) {
-            console.error('Erreur lors de la création du commit :', error);
-            res.status(500).send(error);
-        }
+        // Tout est bon, renvoyer une réponse avec un code de succès 200
+        res.sendStatus(200);
     });
 });
-
 // Démarrer le serveur
 app.listen(port, () => {
     console.log(`Le serveur fonctionne sur http://localhost:${port}`);
