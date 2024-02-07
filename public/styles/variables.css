@@ -195,7 +195,7 @@ body{
   flex-direction: column;
 }
 
-.inactive{
+.navContainer.inactive{
   display: none;
 }
 

@@ -7,86 +7,116 @@
     <title>Custom Portrait Homme 3</title>
 </head>
 <body>
+<main class="container h-100">
 
-<main class="container">
-
-    <div class="stylish p-3">
+    <div class="stylish main-nav-top p-3">
         <div class="containerStylishButton">
             <a class="button buttonText commandButton centerAllElements" href="/choixtableaux" id="Retour">
-                <img src="/buttons/Retour.svg" alt="retour" class="imgLogo"></img>
+                <img src="/buttons/Retour.svg" alt="retour" class="imgLogo"/>
                 <p>Retour</p>
             </a>
         </div>
 
         <div class="containerStylishButton">
             <a class="button buttonText commandButton centerAllElements" href="/choixtableaux" id="Back">
-                <img src="/buttons/CommandBack.svg" alt="Annuler" class="imgLogo"></img>
+                <img src="/buttons/CommandBack.svg" alt="Annuler" class="imgLogo"/>
                 <p>Annuler</p>
             </a>
         </div>
 
         <div class="containerStylishButton">
             <a class="button buttonText commandButton centerAllElements" href="/choixtableaux" id="Reset">
-                <img src="/buttons/CommandReset.svg" alt="Réinitialiser" class="imgLogo"></img>
+                <img src="/buttons/CommandReset.svg" alt="Réinitialiser" class="imgLogo"/>
                 <p>Réinitialiser</p>
             </a>
         </div>
 
         <div class="containerStylishButton">
             <a class="button buttonText commandButton centerAllElements" href="/choixtableaux" id="Done">
-                <img src="/buttons/CommandDone.svg" alt="Terminer" class="imgLogo"></img>
+                <img src="/buttons/CommandDone.svg" alt="Terminer" class="imgLogo"/>
                 <p>Terminer</p>
             </a>
         </div>
     </div>
 
-    <img src="/portraits/PortraitH3.png" alt="Tableau" class="painting p-3">
-    <img src="/portraits/PortraitH3WB.png" alt="Portrait H sans fond" class="painting p-3 absolute">
-
+<div class="canvas">
+    <div class="slider background ">
+        <script type="module" src="/imagesListFond.js"></script>
+        <script type="module">
+            import { images } from './imagesListFond.js';
+            const background = document.querySelector('.background');
+            console.log('c', background);
+            images.forEach(image => {
+                let img = document.createElement('img');
+                img.src = image;
+                background.appendChild(img);
+                console.log('loding')
+            });
+            updateBackgroundImages()
+        </script>
+    </div>
+    <div class="character">
+        <img src="/portraits/portraitH3WB.png" alt="">
+    </div>
+    <div class="slider accessory-top">
+        <script type="module" src="/imagesListAcc.js"></script>
+        <script type="module">
+            import { images } from './imagesListAcc.js';
+            const accessorytop = document.querySelector('.accessory-top');
+            console.log('c', accessorytop);
+            images.forEach(image => {
+                let img = document.createElement('img');
+                img.src = image;
+                accessorytop.appendChild(img);
+                console.log('loding')
+            });
+            // updateAccessorytopImages()
+        </script>
+    </div>
 
     <div id="nav-accessory" class="inactive navContainer">
-        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche" class="button buttonText navButton"></img>
-        <img src="/buttons/SelectRight.svg" alt="Flèche de droite" class="button buttonText navButton"></img>
+        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche" class="button buttonText navButton" id="previous-button-accesoir"/>
+        <img src="/buttons/SelectRight.svg" alt="Flèche de droite" class="button buttonText navButton" id="next-button-accesoir"/>
     </div>
 
     <div id="nav-background" class="inactive navContainer">
-        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche" class="button buttonText navButton"></img>
-        <img src="/buttons/SelectRight.svg" alt="Flèche de droite" class="button buttonText navButton"></img>
+        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche" class="button buttonText navButton" id="previous-button-background"/>
+        <img src="/buttons/SelectRight.svg" alt="Flèche de droite" class="button buttonText navButton" id="next-button-background"/>
     </div>
 
     <div id="nav-pattern" class="inactive navContainer">
-        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche" class="button buttonText navButton"></img>
-        <img src="/buttons/SelectRight.svg" alt="Flèche de droite" class="button buttonText navButton"></img>
+        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche" class="button buttonText navButton" id="previous-button-pattern"/>
+        <img src="/buttons/SelectRight.svg" alt="Flèche de droite" class="button buttonText navButton" id="next-button-pattern"/>
     </div>
 
     <div id="nav-filter" class="inactive navContainer">
-        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche" class="button buttonText navButton"></img>
-        <img src="/buttons/SelectRight.svg" alt="Flèche de droite" class="button buttonText navButton"></img>
+        <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche" class="button buttonText navButton"  id="previous-button-filter"/>
+        <img src="/buttons/SelectRight.svg" alt="Flèche de droite" class="button buttonText navButton" id="next-button-filter"/>
     </div>
-
-    <div class="stylish p-3">
+</div>
+    <div class="stylish  main-nav-bottom p-3">
         <div class="containerStylishButton">
             <a class="button buttonText stylishButton centerAllElements" id="accessoryButton">
-                <img src="/buttons/Accessory.svg" alt="Accessoires" id="accessory"></img>
+                <img src="/buttons/Accessory.svg" alt="Accessoires" id="accessory"/>
             </a>
             <p>Accessoires</p>
         </div>
         <div class="containerStylishButton">
             <a class="button buttonText stylishButton centerAllElements" id="bgButton">
-                <img src="/buttons/Background.svg" alt="Fond" id="background"></img>
+                <img src="/buttons/Background.svg" alt="Fond" id="background"/>
             </a>
             <p>Fond</p>
         </div>
         <div class="containerStylishButton">
             <a class="button buttonText stylishButton centerAllElements" id="patternButton">
-                <img src="/buttons/Patterns.svg" alt="Motifs" id="pattern"></img>
+                <img src="/buttons/Patterns.svg" alt="Motifs" id="pattern"/>
             </a>
             <p>Motifs</p>
         </div>
 
         <div class="containerStylishButton">
             <a class="button buttonText stylishButton centerAllElements" id="filterButton">
-                <img src="/buttons/Settings.svg" alt="Filtres" id="filter"></img>
+                <img src="/buttons/Settings.svg" alt="Filtres" id="filter"/>
             </a>
             <p>Filtres</p>
         </div>
@@ -98,6 +128,7 @@
 </form>-->
 
 </main>
-<script src="stylish.js"></script>
+<script src="/stylish.js"></script>
+<script src="/carousel.js"></script>
 </body>
 </html>

@@ -1,1 +1,1 @@
-export const images = ["/fond/FOND1.png","/fond/FOND2.png","/fond/FOND3.png","/fond/FOND4.png","/fond/FOND5.png","/fond/FOND6.png","/fond/FOND7.png","/fond/FOND8.png"];
+export const images = ["/fond/background1.jpg","/fond/background2.jpg","/fond/background3.jpg","/fond/background4.jpg","/fond/background5.jpg","/fond/background6.jpg","/fond/background7.jpg","/fond/background8.jpg","/fond/background9.jpg"];
