@@ -18,46 +18,6 @@
     <a class="button container buttonText" href="/credits">CREDITS</a>
 
 </div>
-<div id="blotter-text" class="pl-lg-5">
-    <p>Test Test Test Test Test TEst Test</p>
-   </div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bottlejs/2.0.1/bottle.min.js" ></script>
-<script src="/libs/blotter.js"></script>
-<script src="/libs/rollingDistortMaterial.js" ></script>
-
-   <script>
-    const fontContainer = document.querySelector("#blotter-text");
-    const containerTexts = fontContainer.innerText.toUpperCase().split(" ");
-    // Clear container.
-    fontContainer.innerText = "";
-
-    const material = new Blotter.RollingDistortMaterial();
-    const blotterTexts = containerTexts.map(function(text) {
-        return new Blotter.Text(text, {
-            family: "Media Sans Extended",
-            size: 66.5,
-            needsUpdate: true,
-            fill: "#FFFFFF",
-            leading: "1",
-            paddingLeft: 10,
-            paddingRight: 10
-        });
-    });
-
-    const blotter = new Blotter(material, {
-        texts: blotterTexts
-    });
-
-    // Append Blotter Texts back into container.
-    blotterTexts.forEach(function(text) {
-        const scope = blotter.forText(text);
-
-        scope.appendTo(fontContainer);
-    });
-   </script>
 
 </main>
 

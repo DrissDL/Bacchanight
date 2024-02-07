@@ -15,8 +15,8 @@ const navAccessory = document.getElementById('nav-accessory');
 accessoryButton.addEventListener('click', () => {
     console.log('click accessoryButton');
     //reset
-    navPattern.classList.add('inactive');
-    patternButton.classList.remove('selected')
+    // navPattern.classList.add('inactive');
+    // patternButton.classList.remove('selected')
     navFilter.classList.add('inactive');
     filterButton.classList.remove('selected');
     navBackground.classList.add('inactive');
@@ -33,8 +33,8 @@ const navBackground = document.getElementById('nav-background');
 backgroundButton.addEventListener('click', () => {
     console.log('click backgroundButton');
     //reset
-    navPattern.classList.add('inactive');
-    patternButton.classList.remove('selected')
+    // navPattern.classList.add('inactive');
+    // patternButton.classList.remove('selected')
     navFilter.classList.add('inactive');
     filterButton.classList.remove('selected');
     navAccessory.classList.add('inactive');
@@ -47,24 +47,24 @@ backgroundButton.addEventListener('click', () => {
 
 
 
-const patternButton = document.getElementById('patternButton');
-const navPattern = document.getElementById('nav-pattern');
+// const patternButton = document.getElementById('patternButton');
+// const navPattern = document.getElementById('nav-pattern');
 
-patternButton.addEventListener('click', () => {
-        //reset
-        navBackground.classList.add('inactive');
-        backgroundButton.classList.remove('selected')
-        navFilter.classList.add('inactive');
-        filterButton.classList.remove('selected');
-        navAccessory.classList.add('inactive');
-        accessoryButton.classList.remove('selected');
+// patternButton.addEventListener('click', () => {
+//         //reset
+//         navBackground.classList.add('inactive');
+//         backgroundButton.classList.remove('selected')
+//         navFilter.classList.add('inactive');
+//         filterButton.classList.remove('selected');
+//         navAccessory.classList.add('inactive');
+//         accessoryButton.classList.remove('selected');
         
 
 
 
-    navPattern.classList.toggle('inactive');
-    patternButton.classList.toggle('selected');
-})
+//     navPattern.classList.toggle('inactive');
+//     patternButton.classList.toggle('selected');
+// })
 
 const filterButton = document.getElementById('filterButton');
 const navFilter = document.getElementById('nav-filter');
@@ -73,8 +73,8 @@ filterButton.addEventListener('click', () => {
             //reset
             navBackground.classList.add('inactive');
             backgroundButton.classList.remove('selected')
-            navPattern.classList.add('inactive');
-            patternButton.classList.remove('selected');
+            // navPattern.classList.add('inactive');
+            // patternButton.classList.remove('selected');
             navAccessory.classList.add('inactive');
             accessoryButton.classList.remove('selected');
 
