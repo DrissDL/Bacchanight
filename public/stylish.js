@@ -15,6 +15,12 @@ const navBackground = document.getElementById('nav-background');
 
 backgroundButton.addEventListener('click', () => {
     console.log('click backgroundButton');
+    //reset
+    navPattern.classList.add('inactive');
+    patternButton.classList.remove('selected')
+    navFilter.classList.add('inactive');
+    filterButton.classList.remove('selected');
+
     navBackground.classList.toggle('inactive');
     backgroundButton.classList.toggle('selected');
 })
@@ -23,6 +29,13 @@ const patternButton = document.getElementById('patternButton');
 const navPattern = document.getElementById('nav-pattern');
 
 patternButton.addEventListener('click', () => {
+        //reset
+        navBackground.classList.add('inactive');
+        backgroundButton.classList.remove('selected')
+        navFilter.classList.add('inactive');
+        filterButton.classList.remove('selected');
+
+
     navPattern.classList.toggle('inactive');
     patternButton.classList.toggle('selected');
 })
@@ -31,6 +44,13 @@ const filterButton = document.getElementById('filterButton');
 const navFilter = document.getElementById('nav-filter');
 
 filterButton.addEventListener('click', () => {
+            //reset
+            navBackground.classList.add('inactive');
+            backgroundButton.classList.remove('selected')
+            navPattern.classList.add('inactive');
+            patternButton.classList.remove('selected')
+
+
     navFilter.classList.toggle('inactive');
     filterButton.classList.toggle('selected');
 })
