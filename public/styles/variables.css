@@ -224,3 +224,15 @@ body{
   position: absolute;
   transform: translate(0rem, -1rem);
 }
+
+.navButton{
+  background-color: white;
+  height: 2.438rem;
+  width: 2.438rem;
+}
+
+.navContainer{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
