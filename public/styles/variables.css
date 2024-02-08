@@ -173,7 +173,7 @@ body{
   width: 100%; /* Assure que l'image occupe la largeur complète du conteneur */
   height: auto; /* Ajuste la hauteur en conséquence pour maintenir les proportions */
   position: relative;
-  max-width: 500px;
+  max-width: 350px;
 }
 
 .stylish{
@@ -242,6 +242,7 @@ body{
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 
 .modal{
