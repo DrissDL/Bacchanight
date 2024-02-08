@@ -8,12 +8,18 @@
 .canvas {
     overflow: hidden;
     position: relative;
-    width: 100%;
-    /* width: 300px;
-    height: 400px; */
+    width: 400px;
+    height: 500px;
     max-width: 900px;
     z-index: 100;
-    flex-grow: 1 ;
+    /* flex-grow: 1 ; */
+  }
+
+  @media screen  and (max-width: 415px) {
+    .canvas{
+      width: 280px;
+      height: 400px;
+    }
   }
 
   .character {
@@ -49,6 +55,12 @@
     inset: 0;
   }
 
+  .character > *{
+    position: absolute;
+    object-position: center bottom;
+    inset: 0;
+  }
+
 
   .slider{
     transition: transform 0.5s;
@@ -65,97 +77,101 @@
     object-fit:contain;
   }
 
+  .character img{
+    object-fit:contain;
+  }
+
 
   .slider > *:nth-child(1) {
-    left:  0%;
+    transform: translateX(0);
   }
   .slider > *:nth-child(2) {
-    left: 100%;
+    transform: translateX( 100%);
   }
   .slider > *:nth-child(3) {
-    left: 200%;
+    transform: translateX( 200%);
   }
   .slider > *:nth-child(4) {
-    left: 300%;
+    transform: translateX( 300%);
   }
 
   .slider > *:nth-child(5) {
-    left: 400%;
+    transform: translateX( 400%);
   }
 
   .slider > *:nth-child(6) {
-    left: 500%;
+    transform: translateX( 500%);
   }
 
   .slider > *:nth-child(7) {
-    left: 600%;
+    transform: translateX( 600%);
   }
 
   .slider > *:nth-child(8) {
-    left: 700%;
+    transform: translateX( 700%);
   }
 
   .slider > *:nth-child(9) {
-    left: 800%;
+    transform: translateX( 800%);
   }
 
   .slider > *:nth-child(10) {
-    left: 900%;
+    transform: translateX( 900%);
   }
 
   .slider > *:nth-child(11) {
-    left: 1000%;
+    transform: translateX( 1000%);
   }
 
   .slider > *:nth-child(12) {
-    left: 1100%;
+    transform: translateX( 1100%);
   }
 
   .slider > *:nth-child(13) {
-    left: 1200%;
+    transform: translateX( 1200%);
   }
 
   .slider > *:nth-child(14) {
-    left: 1300%;
+    transform: translateX( 1300%);
   }
 
   .slider > *:nth-child(15) {
-    left: 1400%;
+    transform: translateX( 1400%);
   }
 
   .slider > *:nth-child(16) {
-    left: 1500%;
+    transform: translateX( 1500%);
   }
 
   .slider > *:nth-child(17) {
-    left: 1600%;
+    transform: translateX( 1600%);
   }
 
   .slider > *:nth-child(18) {
-    left: 1700%;
+    transform: translateX( 1700%);
   }
 
   .slider > *:nth-child(19) {
-    left: 1800%;
+    transform: translateX( 1800%);
   }
   .slider > *:nth-child(20) {
-    left: 1800%;
+    transform: translateX( 1800%);
   }
 
   .slider > *:nth-child(21) {
-    left: 1900%;
+    transform: translateX( 1900%);
   }
 
   .slider > *:nth-child(22) {
-    left: 2000%;
+    transform: translateX( 2000%);
   }
 
   .slider > *:nth-child(23) {
-    left: 2100%;
+    transform: translateX( 2100%);
   }
 
   .slider > *:nth-child(24) {
-    left: 2200%;
+    transform: translateX( 2200%);
   }
 
 
