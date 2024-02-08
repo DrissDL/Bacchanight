@@ -1,3 +1,5 @@
+
+
 /*const AccessoryButton = document.getElementById('AccessoryButton');
 const Accessory = document.getElementById('Accessory');
 const rawElements = document.getElementById('rawElements');
@@ -96,4 +98,31 @@ hueRangeInput.addEventListener("input", function() {
     characterImage.style.filter = filterValue;
     characterImage.style.webkitFilter = filterValue; // Pour les navigateurs WebKit (Safari, Chrome)
     characterImage.style.mozFilter = filterValue; // Pour les navigateurs Mozilla (Firefox)
+});
+
+const doneButton = document.getElementById('done');
+
+doneButton.addEventListener('click', () => {
+    // Ajoutez un délai de 1 seconde (1000 millisecondes) avant de capturer l'écran
+
+    // Capture de toute la scène (contenant .character, .background et .accessory-top)
+    html2canvas(document.querySelector('.canvas')).then(canvas => {
+        // Création d'une URL de données à partir du canvas
+        const imageDataURL = canvas.toDataURL();
+
+        // Création d'un élément ancre pour le téléchargement de l'image
+        const downloadLink = document.createElement('a');
+        downloadLink.href = imageDataURL;
+
+        // Spécification du nom de fichier pour le téléchargement
+        downloadLink.download = 'customScene.png';
+
+        // Ajout de l'élément ancre au document et simulation du clic
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+
+        // Suppression de l'élément ancre du document après le téléchargement
+        document.body.removeChild(downloadLink);
+    });
+
 });

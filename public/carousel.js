@@ -32,7 +32,7 @@ const previousButtonBackground = document.getElementById('previous-button-backgr
     });
 
     function updateBackground() {
-      backgroundContainer.style.transform = `translateX(${-100 * backgroundIndex}%)`;
+      backgroundContainer.style.left = `${-100 * backgroundIndex}%`;
     }
 
 // Accesoire

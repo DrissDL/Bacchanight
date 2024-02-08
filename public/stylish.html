@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.png">
 </head>
 <body>
+    
 <main class="container h-100">
 
     <div class="stylish main-nav-top p-3">
@@ -36,7 +37,7 @@
         </div>
 
         <div class="containerStylishButton">
-            <a class="button buttonText commandButton centerAllElements" href="/choixtableaux" id="Done">
+            <a class="button buttonText commandButton centerAllElements" href="#" id="done">
                 <img src="/buttons/CommandDone.svg" alt="Terminer" class="imgLogo"/>
                 <p>Terminer</p>
             </a>
@@ -45,38 +46,11 @@
 
 <div class="canvas">
     <div class="slider background ">
-        <script type="module" src="/imagesListFond.js"></script>
-        <script type="module">
-            import { images } from './imagesListFond.js';
-            const background = document.querySelector('.background');
-            images.forEach(image => {
-                let img = document.createElement('img');
-                img.src = image;
-                background.appendChild(img);
-                console.log('loding')
-            });
-            updateBackgroundImages()
-        </script>
     </div>
     <div class="character">
         <img src="/portraits/PortraitH3WB.png" alt="">
     </div>
-    <div class="slider accessory-top">
-        <script type="module" src="/imagesListAcc.js"></script>
-        <script type="module">
-            import { images } from './imagesListAcc.js';
-            const accessorytop = document.querySelector('.accessory-top');
-            images.forEach(image => {
-                let img = document.createElement('img');
-                img.src = image;
-                accessorytop.appendChild(img);
-                console.log('loding')
-            });
-            updateAccessorytopImages()
-        </script>
-    </div>
-
-
+    <div class="slider accessory-top"></div>
     <div id="nav-accessory" class="inactive navContainer">
         <img src="/buttons/SelectLeft.svg" alt="Flèche de gauche" class="button buttonText navButton" id="previous-button-accesoir"/>
         <img src="/buttons/SelectRight.svg" alt="Flèche de droite" class="button buttonText navButton" id="next-button-accesoir"/>
@@ -133,7 +107,34 @@
 </form>-->
 
 </main>
+<script src="/libs/html2canvas.js"></script>
 <script src="/stylish.js"></script>
 <script src="/carousel.js"></script>
+
+<script type="module" src="/imagesListAcc.js"></script>
+        <script type="module">
+            import { images } from './imagesListAcc.js';
+            const accessorytop = document.querySelector('.accessory-top');
+            images.forEach(image => {
+                let img = document.createElement('img');
+                img.src = image;
+                accessorytop.appendChild(img);
+                console.log('loding')
+            });
+            updateAccessorytopImages()
+        </script>
+<script type="module" src="/imagesListFond.js"></script>
+<script type="module">
+    import { images } from './imagesListFond.js';
+    const background = document.querySelector('.background');
+    images.forEach(image => {
+        let img = document.createElement('img');
+        img.src = image;
+        background.appendChild(img);
+        console.log('loding')
+    });
+    updateBackgroundImages()
+</script>
+
 </body>
 </html>

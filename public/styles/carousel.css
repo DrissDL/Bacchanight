@@ -5,11 +5,12 @@
 
 }
 
-
 .canvas {
     overflow: hidden;
     position: relative;
     width: 100%;
+    /* width: 300px;
+    height: 400px; */
     max-width: 900px;
     z-index: 100;
     flex-grow: 1 ;
@@ -32,7 +33,10 @@
 
   .canvas > * {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .background > * {
@@ -62,96 +66,96 @@
   }
 
 
+  .slider > *:nth-child(1) {
+    left:  0%;
+  }
+  .slider > *:nth-child(2) {
+    left: 100%;
+  }
   .slider > *:nth-child(3) {
-    transform: translateX( 0%);
+    left: 200%;
   }
   .slider > *:nth-child(4) {
-    transform: translateX(100%);
+    left: 300%;
   }
+
   .slider > *:nth-child(5) {
-    transform: translateX(200%);
+    left: 400%;
   }
+
   .slider > *:nth-child(6) {
-    transform: translateX(300%);
+    left: 500%;
   }
 
   .slider > *:nth-child(7) {
-    transform: translateX(400%);
+    left: 600%;
   }
 
   .slider > *:nth-child(8) {
-    transform: translateX(500%);
+    left: 700%;
   }
 
   .slider > *:nth-child(9) {
-    transform: translateX(600%);
+    left: 800%;
   }
 
   .slider > *:nth-child(10) {
-    transform: translateX(700%);
+    left: 900%;
   }
 
   .slider > *:nth-child(11) {
-    transform: translateX(800%);
+    left: 1000%;
   }
 
   .slider > *:nth-child(12) {
-    transform: translateX(900%);
+    left: 1100%;
   }
 
   .slider > *:nth-child(13) {
-    transform: translateX(1000%);
+    left: 1200%;
   }
 
   .slider > *:nth-child(14) {
-    transform: translateX(1100%);
+    left: 1300%;
   }
 
   .slider > *:nth-child(15) {
-    transform: translateX(1200%);
+    left: 1400%;
   }
 
   .slider > *:nth-child(16) {
-    transform: translateX(1300%);
+    left: 1500%;
   }
 
   .slider > *:nth-child(17) {
-    transform: translateX(1400%);
+    left: 1600%;
   }
 
   .slider > *:nth-child(18) {
-    transform: translateX(1500%);
+    left: 1700%;
   }
 
   .slider > *:nth-child(19) {
-    transform: translateX(1600%);
+    left: 1800%;
   }
-
   .slider > *:nth-child(20) {
-    transform: translateX(1700%);
+    left: 1800%;
   }
 
   .slider > *:nth-child(21) {
-    transform: translateX(1800%);
+    left: 1900%;
   }
+
   .slider > *:nth-child(22) {
-    transform: translateX(1800%);
+    left: 2000%;
   }
 
   .slider > *:nth-child(23) {
-    transform: translateX(1900%);
+    left: 2100%;
   }
 
   .slider > *:nth-child(24) {
-    transform: translateX(2000%);
-  }
-
-  .slider > *:nth-child(25) {
-    transform: translateX(2100%);
-  }
-
-  .slider > *:nth-child(26) {
-    transform: translateX(2200%);
+    left: 2200%;
   }
 
 
