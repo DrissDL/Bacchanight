@@ -37,7 +37,7 @@
         </div>
 
         <div class="containerStylishButton">
-            <a class="button buttonText commandButton centerAllElements" href="/terminer.html" id="done">
+            <a class="button buttonText commandButton centerAllElements" href="#" id="done">
                 <img src="/buttons/CommandDone.svg" alt="Terminer" class="imgLogo"/>
                 <p>Terminer</p>
             </a>
@@ -108,9 +108,9 @@
 <script src="/stylish.js"></script>
 <script src="/carousel.js"></script>
 
-<script type="module" src="/imagesListAcc.js"></script>
+<script type="module" src="/images/acc/imagesListAccH4.js"></script>
         <script type="module">
-            import { images } from './imagesListAcc.js';
+            import { images } from '/images/acc/imagesListAccH4.js';
             const accessorytop = document.querySelector('.accessory-top');
             images.forEach(image => {
                 let img = document.createElement('img');
@@ -119,9 +119,9 @@
             });
             updateAccessoryTopImages()
         </script>
-<script type="module" src="/imagesListFond.js"></script>
+<script type="module" src="/images/fond/imagesListFondH4.js"></script>
 <script type="module">
-    import { images } from './imagesListFond.js';
+    import { images } from '/images/fond/imagesListFondH4.js';
     const background = document.querySelector('.background');
     images.forEach(image => {
         let img = document.createElement('img');
@@ -130,9 +130,9 @@
     });
     updateBackgroundImages()
 </script>
-<script type="module" src="/imagesListH3Face.js"></script>
+<script type="module" src="/images/face/imagesListH4Face.js"></script>
 <script type="module">
-    import { images } from './imagesListH3Face.js';
+    import { images } from '/images/face/imagesListH4Face.js';
     const character = document.querySelector('.character');
     images.forEach(image => {
         let img = document.createElement('img');

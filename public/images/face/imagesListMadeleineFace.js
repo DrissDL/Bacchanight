@@ -1,0 +1,1 @@
+export const images = ["/Madeleine/Face/1.png","/Madeleine/Face/2.png","/Madeleine/Face/3.png","/Madeleine/Face/4.png","/Madeleine/Face/5.png"];

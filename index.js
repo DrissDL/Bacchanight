@@ -47,6 +47,27 @@ app.get('/choixtableaux', (req, res) => {
 app.get('/stylish', (req, res) => {
     res.sendFile(path.join(__dirname, './public/stylish.html'));
 });
+// Route pour la stylish
+app.get('/stylishH', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/stylishH.html'));
+});
+// Route pour la stylish
+app.get('/stylishH2', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/stylishH2.html'));
+});
+// Route pour la stylish
+app.get('/stylishH4', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/stylishH4.html'));
+});
+// Route pour la stylish
+app.get('/stylishMadeleine', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/stylishMadeleine.html'));
+});
+// Route pour la stylish
+app.get('/stylishLucrece', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/stylishLucrece.html'));
+});
+
 
 // Route pour la terminer
 app.get('/terminer', (req, res) => {
