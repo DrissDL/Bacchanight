@@ -16,6 +16,10 @@ body {
   margin-bottom: 110px;
 }
 
+.textAlign{
+  text-align: center;
+}
+
 h1 {
   font-family: "BoChenFont";
   font-size: 2.50rem;
@@ -302,20 +306,18 @@ body{
 }
 
 .bulle{
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.bulleImg1{
+.bulleImg{
   width: 100%;
   height: auto;
-  display: block;
-  z-index: 1;
+  margin-bottom: -3rem;
 }
 
-.bulleImg2{
-  width: 100%;
-  display: block;
-  position: absolute;
-  bottom: -8rem;
-  z-index: 2;
+.terminerBtn{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
