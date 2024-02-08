@@ -23,17 +23,17 @@ h1 {
 
 h2 {
   font-family: "BoChenFont";
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 h3 {
   font-family: "BoChenFont";
-  font-size: 1.50rem;
+  font-size: 1.25rem;
 }
 
 h4 {
   font-family: "BoChenFont";
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 p {
@@ -99,6 +99,10 @@ a {
 }
 .gap-2 {
   gap: 3.125rem;
+}
+
+.gap-3{
+  gap: 0.75rem
 }
 
 .w-100{
@@ -274,4 +278,25 @@ body{
 
 .modal.opened{
   display: flex;
+}
+
+.creditsText{
+  margin: 0.20rem;
+}
+
+.creditsTitle{
+  margin: 0.5rem;
+}
+
+.creditsSection{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:2.5rem;
+}
+
+.creditsHeader{
+  display: flex;
+  padding: 1rem;
 }
