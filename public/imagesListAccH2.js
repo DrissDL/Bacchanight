@@ -1,0 +1,1 @@
+export const images = ["/PortraitH2/Top/Aempty-4.png","/PortraitH2/Top/Bouche_2.png","/PortraitH2/Top/Chapeau-2.png","/PortraitH2/Top/Foulard-2.png","/PortraitH2/Top/Moustache-2.png","/PortraitH2/Top/Nez-2.png","/PortraitH2/Top/Noeud-2.png","/PortraitH2/Top/Pipe-2.png","/PortraitH2/Top/Sourcil-2.png","/PortraitH2/Top/Yeux-2.png","/PortraitH2/Top/Éventail-2.png"];
