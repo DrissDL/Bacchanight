@@ -48,6 +48,11 @@ app.get('/stylish', (req, res) => {
     res.sendFile(path.join(__dirname, './public/stylish.html'));
 });
 
+// Route pour la terminer
+app.get('/terminer', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/terminer.html'));
+});
+
 
 // Route POST pour gérer le téléchargement de fichiers
 app.post('/upload', (req, res) => {

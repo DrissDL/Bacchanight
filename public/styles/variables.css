@@ -23,7 +23,7 @@ h1 {
 
 h2 {
   font-family: "BoChenFont";
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 h3 {
@@ -296,7 +296,26 @@ body{
   margin:2.5rem;
 }
 
-.creditsHeader{
+.header{
   display: flex;
   padding: 1rem;
+}
+
+.bulle{
+  position: relative;
+}
+
+.bulleImg1{
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 1;
+}
+
+.bulleImg2{
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: -8rem;
+  z-index: 2;
 }
