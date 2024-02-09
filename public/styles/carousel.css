@@ -17,8 +17,7 @@
 
   @media screen  and (max-width: 415px) {
     .canvas{
-      width: 280px;
-      height: 400px;
+      transform: scale(80%);
     }
   }
 
