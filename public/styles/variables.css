@@ -313,7 +313,7 @@ body{
 .bulleImg{
   width: 100%;
   height: auto;
-  margin-bottom: -3rem;
+  aspect-ratio: 1/1.35;
 }
 
 .terminerBtn{
@@ -330,4 +330,21 @@ body{
 
 .inactive{
   opacity: 0.5;
+}
+
+.containerPainting{
+  position: relative;
+  margin-bottom: -3rem;
+}
+
+.cadre{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.bulleText{
+  position: relative;
+  z-index: 1;
 }
