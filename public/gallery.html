@@ -23,31 +23,30 @@
 </head>
 <body>
 <main class="container">
-
-
-    <h1 class=" centerAllElements textAlign p-1">Gallerie Commune</h2>
+    <h1 class="centerAllElements textAlign p-1">Gallerie Commune</h1>
     <div class="gallery" id="imageGallery"></div>
 
-
-    <script type="module" src="/imagesList.js"></script>
-    <script type="module">
-        // Importer la liste d'images depuis imagesList.js
-        import { images } from './imagesList.js';
-    
-        // Sélectionner l'élément div de la galerie
-        const gallery = document.getElementById('imageGallery');
-    
-        // Parcourir la liste d'images et les ajouter à la galerie
-        images.forEach(image => {
-            // Créer un élément d'image
-            let img = document.createElement('img');
-            // Définir la source de l'image
-            img.src = image;
-            // Ajouter l'image à la galerie
-            gallery.appendChild(img);
-        });
+    <script>
+        fetch('/api_image')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur lors de la récupération des images');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const imageGallery = document.getElementById('imageGallery');
+                data.forEach(image => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = image.image; // Assurez-vous que le champ correspond à l'URL de l'image dans votre objet JSON
+                    imageGallery.appendChild(imgElement);
+                });
+            })
+            .catch(error => {
+                console.error('Erreur:', error.message);
+            });
     </script>
-    
 </main>
 </body>
 </html>
+©

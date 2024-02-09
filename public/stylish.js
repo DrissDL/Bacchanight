@@ -98,25 +98,51 @@ doneButton.addEventListener('click', () => {
     accessoryButton.classList.remove('selected');
 
     // Ajoutez un délai de 1 seconde (1000 millisecondes) avant de capturer l'écran
-
+    setTimeout(() => {
         // Capture de toute la scène (contenant .character, .background et .accessory-top)
         html2canvas(document.querySelector('.canvas')).then(canvas => {
-            // Création d'une URL de données à partir du canvas
+            // Convertir le canvas en base64
             const imageDataURL = canvas.toDataURL();
+            // Envoi de l'URL de l'image à votre serveur Express via une requête POST
+            fetch('/api_image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image: imageDataURL })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur lors de l\'envoi de l\'URL de l\'image au serveur');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('URL de l\'image envoyée avec succès au serveur:', data.message);
+            })
+            .catch(error => {
+                console.error('Erreur:', error.message);
+            });
 
-            // Création d'un élément ancre pour le téléchargement de l'image
+            // Vous pouvez également la télécharger en tant que fichier (optionnel)
             const downloadLink = document.createElement('a');
             downloadLink.href = imageDataURL;
-
-            // Spécification du nom de fichier pour le téléchargement
             downloadLink.download = 'customScene.png';
-
-            // Ajout de l'élément ancre au document et simulation du clic
             document.body.appendChild(downloadLink);
             downloadLink.click();
-
-            // Suppression de l'élément ancre du document après le téléchargement
             document.body.removeChild(downloadLink);
         });
-
+    }, 1000); // Délai de 1 seconde (1000 millisecondes)
 });
+
+
+
+
+// Récupérer l'élément img où afficher l'image générée
+const generatedImage = document.getElementById('generatedImage');
+
+// Stocker l'URL de l'image générée dans une variable (remplacez 'imageDataURL' par votre variable contenant l'URL)
+const imageDataURL = image; // Remplacez 'URL_DE_VOTRE_IMAGE' par la chaîne base64 de votre image
+
+// Définir la source de l'image générée
+generatedImage.src = imageDataURL;

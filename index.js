@@ -1,22 +1,35 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config()
+
 const app = express();
 
+const dbUser = process.env.DB_USER;
+const dbName = process.env.DB_NAME;
+const dbPassword = process.env.DB_PASSWORD;
+const dbHost = process.env.DB_HOST;
+const dbPort = process.env.DB_PORT;
+
+const pgp = require("pg-promise")(/*options*/);
+const db = pgp(`postgres://${dbUser}:${dbPassword}@${dbHost}:${dbPort}/${dbName}`);
+console.log(dbHost, dbName, dbPassword, dbPort, dbUser)
+console.log('db',db.tables);
 const port = process.env.PORT || 4000;
 
 // Middleware pour la gestion des téléchargements de fichiers
-app.use(fileUpload({
-    limits: {
-        fileSize: 10 * 1024 * 1024, // Limite de taille du fichier (ici 10 Mo)
-    },
-}));
+app.use(express.json({limit: '50mb'}))
+app.use(express.urlencoded({limit: '50mb'}))
 
 // Middleware pour servir les fichiers statiques depuis le dossier 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Définir le dossier statique pour servir les fichiers publics
 app.use(express.static(path.join(__dirname, 'static')));
+
+// bla bla
+app.use(express.json())
 
 // Route pour la page d'accueil
 app.get('/', (req, res) => {
@@ -28,6 +41,31 @@ app.get('/gallery', (req, res) => {
     res.sendFile(path.join(__dirname, './public/gallery.html'));
 });
 
+// Route pour la galerie root
+app.post('/api_image', (req, res) => {
+    const image = req.body.image;
+    db.one('INSERT INTO images (image) VALUES ($1) RETURNING *', [image])
+        .then(result => {
+            //console.log('Insertion réussie :', result);
+            res.send({ retour: req.body.image });
+        })
+        .catch(err => {
+            console.error('Erreur lors de l\'insertion :', err);
+            res.status(500).send('Erreur lors de l\'insertion de l\'image.');
+        });
+});
+
+app.get('/api_image', (req, res) => {
+    db.any('SELECT * FROM images')
+        .then(data => {
+            console.log('Données récupérées avec succès :', data);
+            res.json(data); // Envoyer les données en tant que réponse JSON
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des données :', error);
+            res.status(500).send('Erreur lors de la récupération des données de la table images.');
+        });
+});
 // Route pour la history
 app.get('/history', (req, res) => {
     res.sendFile(path.join(__dirname, './public/history.html'));
