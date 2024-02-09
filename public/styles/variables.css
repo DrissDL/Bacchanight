@@ -347,4 +347,14 @@ body{
 .bulleText{
   position: relative;
   z-index: 1;
+  max-width: 100%;
+  margin-right: -2rem;
+  margin-left: -2rem;
+}
+
+.bulleContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
 }
