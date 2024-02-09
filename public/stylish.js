@@ -90,6 +90,13 @@ filterButton.addEventListener('click', () => {
 const doneButton = document.getElementById('done');
 
 doneButton.addEventListener('click', () => {
+    navFilter.classList.add('inactive');
+    filterButton.classList.remove('selected');
+    navBackground.classList.add('inactive');
+    backgroundButton.classList.remove('selected');
+    navAccessory.classList.add('inactive');
+    accessoryButton.classList.remove('selected');
+
     // Ajoutez un délai de 1 seconde (1000 millisecondes) avant de capturer l'écran
 
         // Capture de toute la scène (contenant .character, .background et .accessory-top)
