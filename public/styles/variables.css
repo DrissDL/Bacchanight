@@ -180,6 +180,7 @@ body{
 .painting{
   width: 100%; /* Assure que l'image occupe la largeur complète du conteneur */
   height: auto; /* Ajuste la hauteur en conséquence pour maintenir les proportions */
+
   position: relative;
   max-width: 350px;
 }
@@ -189,7 +190,6 @@ body{
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-
 .commandButton{
   margin: 0.20rem;
   width: fit-content;
@@ -358,4 +358,9 @@ body{
   justify-content: center;
   align-items: center;
   width: 90%;
+}
+
+
+.h-fit{
+  height: fit-content;
 }
