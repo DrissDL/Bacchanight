@@ -314,6 +314,7 @@ body{
   width: 100%;
   height: auto;
   aspect-ratio: 1/1.35;
+  object-fit: contain;
 }
 
 .terminerBtn{

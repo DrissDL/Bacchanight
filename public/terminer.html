@@ -7,41 +7,50 @@
     <link rel="icon" type="image/x-icon" href="/favicon.png">
     <title>Crédits</title>
 </head>
-
 <body>
-
-    <div class="header">
+    <!-- <div class="header">
         <a class="button buttonText commandButton centerAllElements" href="/stylish.html" id="Retour">
             <img src="/buttons/Retour.svg" alt="retour" class="imgLogo"/>
             <p>Retour</p>
         </a>
-    </div>
-    
-<main class="container">
-
+    </div> -->
+    <main class="container">
         <h1 class="p-3 textAlign">Voici votre portrait !</h1>
         <div class="centerAllElements m-1 bulle">
             <div class="containerPainting">
-                <img src="/fond/background5.jpg" class="bulleImg">
+                <img id="portraitImage" class="bulleImg">
                 <img src="/cadrePortrait.png" class="cadre">
             </div>
             <div class="bulleContainer">
                 <img src="/françoisFin.png" class="bulleText">
                 <img src="/bulle.svg" class="bulleText">
             </div>
-
             <div class="terminerBtn centerAllElements gap-3">
-                <a href="gallery.html" class="button buttonText" id="galery">Galerie Commune</a>
-                <a href="#" class="button buttonText" id="paintings">Mes Tableaux</a>
-                <a href="#" class="button buttonText" id="download">Telecharger</a>
+                <button class="button buttonText" id="download">Enregistrer</button>
             </div>
         </div>
+    </main>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const portraitImage = document.getElementById('portraitImage');
+            const imageDataURL = localStorage.getItem('customImage');
+            if (imageDataURL) {
+                portraitImage.src = imageDataURL;
+            } else {
+                portraitImage.src = '/fond/background5.jpg'; // Image par défaut si aucune n'est trouvée dans le local storage
+            }
 
-
-
-
-
-
-
+            const downloadButton = document.getElementById('download');
+            downloadButton.addEventListener('click', () => {
+                const downloadLink = document.createElement('a');
+                downloadLink.href = imageDataURL;
+                downloadLink.download = 'customPortrait.png';
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+            });
+        });
+    </script>
 </body>
+</html>
